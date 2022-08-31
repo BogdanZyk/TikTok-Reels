@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */; };
-		5A32E6FB28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */; };
 		5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EB28BEBD0100528140 /* ContentView.swift */; };
-		5A32E6FD28BEBD0300528140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EB28BEBD0100528140 /* ContentView.swift */; };
 		5A32E6FE28BEBD0300528140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A32E6EC28BEBD0300528140 /* Assets.xcassets */; };
-		5A32E6FF28BEBD0300528140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A32E6EC28BEBD0300528140 /* Assets.xcassets */; };
+		5A32E70B28BEC00F00528140 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E70A28BEC00F00528140 /* Color.swift */; };
+		5A32E71928BEC3CA00528140 /* videos in Resources */ = {isa = PBXBuildFile; fileRef = 5A32E71828BEC3CA00528140 /* videos */; };
+		5A32E71F28BEC42E00528140 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E71E28BEC42E00528140 /* MediaFile.swift */; };
+		5A32E72128BEC5E100528140 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E72028BEC5E100528140 /* MainView.swift */; };
+		5A32E72328BEC70C00528140 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E72228BEC70C00528140 /* ReelsView.swift */; };
+		5A32E72528BECCB000528140 /* Reel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E72428BECCB000528140 /* Reel.swift */; };
+		5A32E72728BECE6100528140 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E72628BECE6100528140 /* CustomVideoPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,19 +24,17 @@
 		5A32E6EB28BEBD0100528140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A32E6EC28BEBD0300528140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A32E6F128BEBD0300528140 /* TikTok Reels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TikTok Reels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A32E6F728BEBD0300528140 /* TikTok Reels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TikTok Reels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A32E6F928BEBD0300528140 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		5A32E70A28BEC00F00528140 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5A32E71828BEC3CA00528140 /* videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = videos; sourceTree = "<group>"; };
+		5A32E71E28BEC42E00528140 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
+		5A32E72028BEC5E100528140 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5A32E72228BEC70C00528140 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
+		5A32E72428BECCB000528140 /* Reel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reel.swift; sourceTree = "<group>"; };
+		5A32E72628BECE6100528140 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5A32E6EE28BEBD0300528140 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A32E6F428BEBD0300528140 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,8 +47,8 @@
 		5A32E6E428BEBD0100528140 = {
 			isa = PBXGroup;
 			children = (
+				5A32E71828BEC3CA00528140 /* videos */,
 				5A32E6E928BEBD0100528140 /* Shared */,
-				5A32E6F828BEBD0300528140 /* macOS */,
 				5A32E6F228BEBD0300528140 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +56,8 @@
 		5A32E6E928BEBD0100528140 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5A32E71B28BEC3F800528140 /* Sourse */,
+				5A32E70828BEBFFF00528140 /* Utils */,
 				5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */,
 				5A32E6EB28BEBD0100528140 /* ContentView.swift */,
 				5A32E6EC28BEBD0300528140 /* Assets.xcassets */,
@@ -65,17 +69,60 @@
 			isa = PBXGroup;
 			children = (
 				5A32E6F128BEBD0300528140 /* TikTok Reels.app */,
-				5A32E6F728BEBD0300528140 /* TikTok Reels.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5A32E6F828BEBD0300528140 /* macOS */ = {
+		5A32E70828BEBFFF00528140 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5A32E6F928BEBD0300528140 /* macOS.entitlements */,
+				5A32E70928BEC00500528140 /* Extensions */,
 			);
-			path = macOS;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5A32E70928BEC00500528140 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A32E70A28BEC00F00528140 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A32E71A28BEC3E800528140 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A32E72028BEC5E100528140 /* MainView.swift */,
+				5A32E72228BEC70C00528140 /* ReelsView.swift */,
+				5A32E72628BECE6100528140 /* CustomVideoPlayer.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A32E71B28BEC3F800528140 /* Sourse */ = {
+			isa = PBXGroup;
+			children = (
+				5A32E71D28BEC41100528140 /* ViewModels */,
+				5A32E71C28BEC40500528140 /* Models */,
+				5A32E71A28BEC3E800528140 /* Views */,
+			);
+			path = Sourse;
+			sourceTree = "<group>";
+		};
+		5A32E71C28BEC40500528140 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A32E71E28BEC42E00528140 /* MediaFile.swift */,
+				5A32E72428BECCB000528140 /* Reel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A32E71D28BEC41100528140 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,23 +145,6 @@
 			productReference = 5A32E6F128BEBD0300528140 /* TikTok Reels.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5A32E6F628BEBD0300528140 /* TikTok Reels (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5A32E70528BEBD0300528140 /* Build configuration list for PBXNativeTarget "TikTok Reels (macOS)" */;
-			buildPhases = (
-				5A32E6F328BEBD0300528140 /* Sources */,
-				5A32E6F428BEBD0300528140 /* Frameworks */,
-				5A32E6F528BEBD0300528140 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TikTok Reels (macOS)";
-			productName = "TikTok Reels (macOS)";
-			productReference = 5A32E6F728BEBD0300528140 /* TikTok Reels.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,9 +156,6 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					5A32E6F028BEBD0300528140 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
-					5A32E6F628BEBD0300528140 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -147,7 +174,6 @@
 			projectRoot = "";
 			targets = (
 				5A32E6F028BEBD0300528140 /* TikTok Reels (iOS) */,
-				5A32E6F628BEBD0300528140 /* TikTok Reels (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -157,15 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A32E71928BEC3CA00528140 /* videos in Resources */,
 				5A32E6FE28BEBD0300528140 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A32E6F528BEBD0300528140 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A32E6FF28BEBD0300528140 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,16 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */,
+				5A32E72728BECE6100528140 /* CustomVideoPlayer.swift in Sources */,
+				5A32E72528BECCB000528140 /* Reel.swift in Sources */,
+				5A32E70B28BEC00F00528140 /* Color.swift in Sources */,
+				5A32E71F28BEC42E00528140 /* MediaFile.swift in Sources */,
+				5A32E72128BEC5E100528140 /* MainView.swift in Sources */,
+				5A32E72328BEC70C00528140 /* ReelsView.swift in Sources */,
 				5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A32E6F328BEBD0300528140 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A32E6FD28BEBD0300528140 /* ContentView.swift in Sources */,
-				5A32E6FB28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,6 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -315,6 +333,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -328,7 +347,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -345,6 +364,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -358,64 +378,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5A32E70628BEBD0300528140 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92PU6D6MCQ;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BogdanZykov.TikTok-Reels";
-				PRODUCT_NAME = "TikTok Reels";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		5A32E70728BEBD0300528140 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 92PU6D6MCQ;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BogdanZykov.TikTok-Reels";
-				PRODUCT_NAME = "TikTok Reels";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -436,15 +400,6 @@
 			buildConfigurations = (
 				5A32E70328BEBD0300528140 /* Debug */,
 				5A32E70428BEBD0300528140 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5A32E70528BEBD0300528140 /* Build configuration list for PBXNativeTarget "TikTok Reels (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A32E70628BEBD0300528140 /* Debug */,
-				5A32E70728BEBD0300528140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
