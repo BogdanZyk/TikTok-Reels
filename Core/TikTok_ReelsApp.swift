@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TikTok_ReelsApp: App {
+    @StateObject var loginVM = LoginViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(loginVM)
         }
     }
 }

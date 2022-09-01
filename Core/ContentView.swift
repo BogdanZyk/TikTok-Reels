@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var loginVM: LoginViewModel
     var body: some View {
-        MainView()
+        if loginVM.isloggedUser{
+            MainView()
+        }else{
+            LoginView()
+                .environmentObject(loginVM)
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(LoginViewModel())
     }
 }

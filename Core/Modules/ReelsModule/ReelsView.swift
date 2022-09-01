@@ -114,11 +114,11 @@ struct ReelsPlayer: View{
 //                .onChange(of: player.timeControlStatus) { status in
 //                    isPlay = status == .playing ? true : false
 //                }
-                if player.rate != 0 && player.error == nil{
-                    Image(systemName: "play.fill")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
+//                if player.rate != 0 && player.error == nil{
+//                    Image(systemName: "play.fill")
+//                        .font(.title)
+//                        .foregroundColor(.white)
+//                }
             }
         }
     }
