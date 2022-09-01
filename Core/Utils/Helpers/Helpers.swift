@@ -1,8 +1,8 @@
 //
 //  Helpers.swift
-//   TikTok Reels (iOS)
+//  TikTok Reels (iOS)
 //
-//  Created by Bogdan Zykov on 11.08.2022.
+//  Created by Bogdan Zykov on 02.09.2022.
 //
 
 import Firebase

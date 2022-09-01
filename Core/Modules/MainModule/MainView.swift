@@ -18,7 +18,7 @@ struct MainView: View {
         VStack(spacing: 0) {
             TabView(selection: $currentTab) {
               
-                ReelsView()
+                ReelsView2()
                     .tag(Tab.home)
                 
                 Text("Discover")

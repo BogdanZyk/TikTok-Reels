@@ -1,35 +1,31 @@
 //
-//  ReelsView.swift
+//  ReelsView2.swift
 //  TikTok Reels (iOS)
 //
-//  Created by Bogdan Zykov on 31.08.2022.
+//  Created by Bogdan Zykov on 02.09.2022.
 //
 
+import AVFoundation
 import SwiftUI
-import AVKit
+import VideoPlayer
 
-struct ReelsView: View {
+struct ReelsView2: View {
     @StateObject private var reelVM = ReelsViewModel()
-    @State private var currentReel = ""
+    @State private var currentVideoId = ""
     
-    @State private var reels = MediaFileJSON.map { item -> Reel in
-        let url = Bundle.main.path(forResource: item.url, ofType: "mp4", inDirectory: "videos") ?? ""
-        let player = AVPlayer(url: URL(fileURLWithPath: url))
-        
-        return Reel(player: player, mediaFile: item)
-    }
+    
     
     var body: some View {
         
         GeometryReader { proxy in
             let size = proxy.size
-            TabView(selection: $currentReel) {
-                ForEach($reels){reel in
-                    ReelsPlayer(size: size, currentReel: $currentReel, reel: reel)
+            TabView(selection: $currentVideoId) {
+                ForEach(reelVM.videos){video in
+                    ReelsPlayer2(size: size, currentVideoId: $currentVideoId, video: video)
                     .frame(width: size.width)
                     .rotationEffect(.degrees(-90))
                     .ignoresSafeArea(.all, edges: .top)
-                    .tag(reel.id)
+                    .tag(video.id)
                 }
             }
             .rotationEffect(.degrees(90))
@@ -40,44 +36,74 @@ struct ReelsView: View {
         .ignoresSafeArea(.all, edges: .top)
         .background(Color.black.ignoresSafeArea())
         .onAppear{
-            currentReel = reels.first?.id ?? ""
+            currentVideoId = reelVM.videos.first?.id ?? ""
         }
     }
 }
 
-struct ReelsView_Previews: PreviewProvider {
+struct ReelsView2_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(LoginViewModel())
+            
     }
 }
 
 
-struct ReelsPlayer: View{
+struct ReelsPlayer2: View{
     var size: CGSize
-    @Binding var currentReel: String
-    @State private var isPlay: Bool = true
+    @State private var autoReplay: Bool = true
+    @State private var time: CMTime = .zero
+    @Binding var currentVideoId: String
+    @State private var play: Bool = true
+    @State private var isStop: Bool = false
     @State private var showMore = false
     @State private var isOpacity = false
-    @Binding var reel: Reel
+    @State private var totalDuration: Double = 0
+    
+    var video: Video
     var body: some View{
         ZStack{
-            if let player = reel.player{
-                CustomVideoPlayer(player: player)
-                    .onTapGesture {
-                        if player.timeControlStatus == .playing {
-                            player.pause()
-                        }else{
-                            player.play()
+            if let videoUrl = video.videoURL, let url = URL(string: videoUrl){
+                VideoPlayer(url: url, play: $play, time: $time)
+                   
+                    .autoReplay(autoReplay)
+                    .onStateChanged { state in
+                        switch state {
+                        
+                        case .playing(let totalDuration):
+                            
+                        self.totalDuration = totalDuration
+                        
+                        default:
+                            break
                         }
+                    }
+                    .onPlayToEndTime {
+                        resetTimeVideo()
+                    }
+                    .onTapGesture {
+                        
+                        play = !play
+                        isStop = !play
                         
                     }
+                    .onDisappear{
+                        play = false
+                        isStop = false
+                        resetTimeVideo()
+                    }
+                   
                 GeometryReader { proxy -> Color in
                     let minY = proxy.frame(in: .global).minY
                     
                     DispatchQueue.main.async {
                         
                         
-                        if -minY < 1 && minY < 1{
+                        if (-minY < 1 && minY < 1){
+                            
+                            //play = true
+                            
                             withAnimation(.easeInOut(duration: 0.25)) {
                                 isOpacity = false
                             }
@@ -86,24 +112,20 @@ struct ReelsPlayer: View{
                             withAnimation(.easeInOut(duration: 0.25)) {
                                 isOpacity = true
                             }
-                            
-                          
                         }
-                        
-                        
-                        if -minY < (size.height / 2) && minY < (size.height / 2) && currentReel == reel.id{
-                            player.play()
-                        }else{
-                            
-                            player.pause()
-                        }
+                    }
+                    
+                    if -minY < size.height && minY < 1 && !isStop{
+                        play = true
+                    }else{
+                        play = false
                     }
                     
                     return Color.clear
                 }
                 VStack{
                     HStack(alignment: .bottom) {
-                        reelInfoViewsection
+                        reelInfoViewSection(video)
                         reelActionButtons
                     }
                 }
@@ -112,21 +134,19 @@ struct ReelsPlayer: View{
                 .foregroundColor(.white)
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .opacity(isOpacity ? 0.5 : 1)
-//                .onChange(of: player.timeControlStatus) { status in
-//                    isPlay = status == .playing ? true : false
-//                }
-//                if player.rate != 0 && player.error == nil{
-//                    Image(systemName: "play.fill")
-//                        .font(.title)
-//                        .foregroundColor(.white)
-//                }
+
+                if isStop{
+                    Image(systemName: "play.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
             }
         }
     }
 }
 
-extension ReelsPlayer{
-    private var reelInfoViewsection: some View{
+extension ReelsPlayer2{
+    private func reelInfoViewSection(_ video: Video) -> some View{
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 2) {
                 Text("@karennne")
@@ -134,7 +154,7 @@ extension ReelsPlayer{
                 Text("· 1-28")
                     .foregroundColor(.white.opacity(0.5))
             }
-            Text(reel.mediaFile.title)
+            Text(video.title ?? "")
                 .font(.callout)
                 .fontWeight(.semibold)
             Text("Roddy Roundicch - The Rou")
@@ -168,14 +188,11 @@ extension ReelsPlayer{
             }
             
         }
-
+    }
+    private func resetTimeVideo(){
+        self.time = CMTimeMakeWithSeconds(0.0, preferredTimescale: self.time.timescale)
     }
 }
 
 
-extension AVPlayer {
 
-    var isPlaying: Bool {
-        return ((rate != 0) && (error == nil))
-    }
-}
