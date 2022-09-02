@@ -72,14 +72,12 @@ struct ReelsPlayer2: View{
                                 isOpacity = true
                             }
                         }
+                        if -minY < size.height && minY < 1 && !isStop{
+                            play = true
+                        }else{
+                            play = false
+                        }
                     }
-                    
-                    if -minY < size.height && minY < 1 && !isStop{
-                        play = true
-                    }else{
-                        play = false
-                    }
-                    
                     return Color.clear
                 }
                 VStack{
@@ -127,15 +125,19 @@ extension ReelsPlayer2{
     
     private var reelActionButtons: some View{
         VStack(spacing: 25){
-            Circle()
-                .fill(.gray)
+            Image("plaseholdAvatar")
+                .resizable()
                 .frame(width: 47, height: 47)
+                .overlay(Circle().stroke(lineWidth: 1.3))
+                .clipShape(Circle())
             actionButton(image: "heartFill", value: "3445")
             actionButton(image: "messageIcon", value: "124")
             actionButton(image: "shareIcon", value: "Share")
-            Circle()
-                .fill(.gray)
+            Image("audioPlacehold")
+                .resizable()
                 .frame(width: 47, height: 47)
+                .overlay(Circle().stroke(lineWidth: 20).fill(Color.black.opacity(0.8)))
+                .clipShape(Circle())
         }
     }
     
