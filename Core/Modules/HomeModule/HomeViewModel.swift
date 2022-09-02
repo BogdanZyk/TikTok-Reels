@@ -21,13 +21,7 @@ final class HomeViewModel: ObservableObject{
         self.clipDataService = clipDataService
         startClipSubscriptions()
         
-        for family in UIFont.familyNames {
-                 print(family)
-
-                 for names in UIFont.fontNames(forFamilyName: family){
-                 print("== \(names)")
-                 }
-            }
+      
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
 //            self.uploadData()
 //        }

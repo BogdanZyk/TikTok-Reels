@@ -132,7 +132,7 @@ extension ClipsPlayer{
         VStack(spacing: 25){
             authorAvatarButton(clip.athor)
             actionButtons(clip)
-            SoundtrackCircleButton(soundtrack: clip.sound)
+            SoundtrackCircleButton(isAnimation: play, soundtrack: clip.sound)
         }
     }
     
