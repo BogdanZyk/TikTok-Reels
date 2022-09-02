@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5A29085928C2AA640018516F /* ClipDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29085828C2AA640018516F /* ClipDataService.swift */; };
+		5A29086028C2B0760018516F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29085F28C2B0760018516F /* Fonts.swift */; };
+		5A29086328C2B3CB0018516F /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A29086228C2B3CB0018516F /* ProximaNova-Bold.ttf */; };
+		5A29086628C2B3F00018516F /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A29086428C2B3F00018516F /* ProximaNova-Semibold.ttf */; };
+		5A29086728C2B3F00018516F /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A29086528C2B3F00018516F /* ProximaNova-Regular.ttf */; };
+		5A29086928C2BA040018516F /* UserAvatarViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29086828C2BA040018516F /* UserAvatarViewComponent.swift */; };
+		5A29086B28C2BA330018516F /* CustomLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29086A28C2BA330018516F /* CustomLazyImage.swift */; };
+		5A29086E28C2BA710018516F /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A29086D28C2BA710018516F /* NukeUI */; };
+		5A29087028C2BBA60018516F /* SoundtrackCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29086F28C2BBA60018516F /* SoundtrackCircleButton.swift */; };
 		5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */; };
 		5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EB28BEBD0100528140 /* ContentView.swift */; };
 		5A32E6FE28BEBD0300528140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A32E6EC28BEBD0300528140 /* Assets.xcassets */; };
@@ -25,7 +33,7 @@
 		5A60A6DE28C1534C00FE1803 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6DD28C1534C00FE1803 /* UserDataService.swift */; };
 		5A60A6E128C1543D00FE1803 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A60A6E028C1543D00FE1803 /* FirebaseFirestoreSwift */; };
 		5A60A6E328C1546D00FE1803 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6E228C1546D00FE1803 /* User.swift */; };
-		5A60A6E528C154C400FE1803 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6E428C154C400FE1803 /* Video.swift */; };
+		5A60A6E528C154C400FE1803 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6E428C154C400FE1803 /* Clip.swift */; };
 		5A60A6E728C1568100FE1803 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6E628C1568100FE1803 /* LoginView.swift */; };
 		5A60A6EC28C1574000FE1803 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6EB28C1574000FE1803 /* LoginViewModel.swift */; };
 		5A60A6F628C159A600FE1803 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6F528C159A600FE1803 /* View.swift */; };
@@ -43,9 +51,14 @@
 
 /* Begin PBXFileReference section */
 		5A29085828C2AA640018516F /* ClipDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDataService.swift; sourceTree = "<group>"; };
-		5A29085B28C2AFA90018516F /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
-		5A29085C28C2AFA90018516F /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
-		5A29085D28C2AFA90018516F /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		5A29085F28C2B0760018516F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5A29086128C2B0F10018516F /* TikTok-Reels--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TikTok-Reels--iOS--Info.plist"; sourceTree = "<group>"; };
+		5A29086228C2B3CB0018516F /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		5A29086428C2B3F00018516F /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		5A29086528C2B3F00018516F /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		5A29086828C2BA040018516F /* UserAvatarViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarViewComponent.swift; sourceTree = "<group>"; };
+		5A29086A28C2BA330018516F /* CustomLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyImage.swift; sourceTree = "<group>"; };
+		5A29086F28C2BBA60018516F /* SoundtrackCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundtrackCircleButton.swift; sourceTree = "<group>"; };
 		5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTok_ReelsApp.swift; sourceTree = "<group>"; };
 		5A32E6EB28BEBD0100528140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A32E6EC28BEBD0300528140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +73,7 @@
 		5A60A6DB28C1531800FE1803 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		5A60A6DD28C1534C00FE1803 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		5A60A6E228C1546D00FE1803 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5A60A6E428C154C400FE1803 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		5A60A6E428C154C400FE1803 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		5A60A6E628C1568100FE1803 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5A60A6EB28C1574000FE1803 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5A60A6F528C159A600FE1803 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -83,6 +96,7 @@
 				5A60A6D528C152AE00FE1803 /* FirebaseAuth in Frameworks */,
 				5A60A6D728C152AE00FE1803 /* FirebaseFirestore in Frameworks */,
 				5A60A6D928C152AE00FE1803 /* FirebaseStorage in Frameworks */,
+				5A29086E28C2BA710018516F /* NukeUI in Frameworks */,
 				5A60A6E128C1543D00FE1803 /* FirebaseFirestoreSwift in Frameworks */,
 				5A60A70428C1642D00FE1803 /* VideoPlayer in Frameworks */,
 			);
@@ -102,9 +116,10 @@
 		5A29085A28C2AF940018516F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5A29085B28C2AFA90018516F /* ProximaNova-Bold.ttf */,
-				5A29085D28C2AFA90018516F /* ProximaNova-Regular.ttf */,
-				5A29085C28C2AFA90018516F /* ProximaNova-Semibold.ttf */,
+				5A29086528C2B3F00018516F /* ProximaNova-Regular.ttf */,
+				5A29086428C2B3F00018516F /* ProximaNova-Semibold.ttf */,
+				5A29086228C2B3CB0018516F /* ProximaNova-Bold.ttf */,
+				5A29085F28C2B0760018516F /* Fonts.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -112,6 +127,7 @@
 		5A32E6E428BEBD0100528140 = {
 			isa = PBXGroup;
 			children = (
+				5A29086128C2B0F10018516F /* TikTok-Reels--iOS--Info.plist */,
 				5A60A6D128C150D100FE1803 /* GoogleService-Info.plist */,
 				5A32E71828BEC3CA00528140 /* videos */,
 				5A32E6E928BEBD0100528140 /* Core */,
@@ -179,7 +195,7 @@
 				5A32E71E28BEC42E00528140 /* MediaFile.swift */,
 				5A32E72428BECCB000528140 /* Reel.swift */,
 				5A60A6E228C1546D00FE1803 /* User.swift */,
-				5A60A6E428C154C400FE1803 /* Video.swift */,
+				5A60A6E428C154C400FE1803 /* Clip.swift */,
 				5A60A6FD28C15FB300FE1803 /* MockData.swift */,
 			);
 			path = Models;
@@ -225,6 +241,9 @@
 			children = (
 				5A32E72628BECE6100528140 /* CustomVideoPlayer.swift */,
 				5A60A6F928C15D3C00FE1803 /* CustomTextField.swift */,
+				5A29086828C2BA040018516F /* UserAvatarViewComponent.swift */,
+				5A29086A28C2BA330018516F /* CustomLazyImage.swift */,
+				5A29086F28C2BBA60018516F /* SoundtrackCircleButton.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -270,6 +289,7 @@
 				5A60A6D828C152AE00FE1803 /* FirebaseStorage */,
 				5A60A6E028C1543D00FE1803 /* FirebaseFirestoreSwift */,
 				5A60A70328C1642D00FE1803 /* VideoPlayer */,
+				5A29086D28C2BA710018516F /* NukeUI */,
 			);
 			productName = "TikTok Reels (iOS)";
 			productReference = 5A32E6F128BEBD0300528140 /* TikTok Reels.app */;
@@ -303,6 +323,7 @@
 				5A60A6D328C152AE00FE1803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5A60A6DF28C1543D00FE1803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5A60A70228C1642D00FE1803 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
+				5A29086C28C2BA710018516F /* XCRemoteSwiftPackageReference "NukeUI" */,
 			);
 			productRefGroup = 5A32E6F228BEBD0300528140 /* Products */;
 			projectDirPath = "";
@@ -320,6 +341,9 @@
 			files = (
 				5A32E71928BEC3CA00528140 /* videos in Resources */,
 				5A32E6FE28BEBD0300528140 /* Assets.xcassets in Resources */,
+				5A29086728C2B3F00018516F /* ProximaNova-Regular.ttf in Resources */,
+				5A29086628C2B3F00018516F /* ProximaNova-Semibold.ttf in Resources */,
+				5A29086328C2B3CB0018516F /* ProximaNova-Bold.ttf in Resources */,
 				5A60A6D228C150D100FE1803 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,11 +359,14 @@
 				5AA80D7828C187B6001AA3D7 /* HomeViewModel.swift in Sources */,
 				5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */,
 				5AA80D7528C187B6001AA3D7 /* ClipsPlayer.swift in Sources */,
-				5A60A6E528C154C400FE1803 /* Video.swift in Sources */,
+				5A29086928C2BA040018516F /* UserAvatarViewComponent.swift in Sources */,
+				5A60A6E528C154C400FE1803 /* Clip.swift in Sources */,
 				5A60A70128C1631D00FE1803 /* Helpers.swift in Sources */,
+				5A29086028C2B0760018516F /* Fonts.swift in Sources */,
 				5A60A6F628C159A600FE1803 /* View.swift in Sources */,
 				5A32E72728BECE6100528140 /* CustomVideoPlayer.swift in Sources */,
 				5AA80D7728C187B6001AA3D7 /* ReelsView.swift in Sources */,
+				5A29087028C2BBA60018516F /* SoundtrackCircleButton.swift in Sources */,
 				5A32E72528BECCB000528140 /* Reel.swift in Sources */,
 				5A60A6DC28C1531800FE1803 /* FirebaseManager.swift in Sources */,
 				5A32E70B28BEC00F00528140 /* Color.swift in Sources */,
@@ -352,6 +379,7 @@
 				5A60A6DE28C1534C00FE1803 /* UserDataService.swift in Sources */,
 				5A29085928C2AA640018516F /* ClipDataService.swift in Sources */,
 				5A32E72128BEC5E100528140 /* MainView.swift in Sources */,
+				5A29086B28C2BA330018516F /* CustomLazyImage.swift in Sources */,
 				5A60A6E728C1568100FE1803 /* LoginView.swift in Sources */,
 				5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */,
 				5A60A6E328C1546D00FE1803 /* User.swift in Sources */,
@@ -482,12 +510,13 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TikTok-Reels--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,12 +542,13 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TikTok-Reels--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,6 +589,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A29086C28C2BA710018516F /* XCRemoteSwiftPackageReference "NukeUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/NukeUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.3;
+			};
+		};
 		5A60A6D328C152AE00FE1803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -586,6 +624,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A29086D28C2BA710018516F /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A29086C28C2BA710018516F /* XCRemoteSwiftPackageReference "NukeUI" */;
+			productName = NukeUI;
+		};
 		5A60A6D428C152AE00FE1803 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A60A6D328C152AE00FE1803 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

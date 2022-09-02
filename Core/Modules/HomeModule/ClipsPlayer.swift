@@ -82,7 +82,7 @@ struct ClipsPlayer: View{
                 VStack{
                     HStack(alignment: .bottom) {
                         reelInfoViewSection(clip)
-                        reelActionButtons
+                        clipPrimaryButtons(clip)
                     }
                 }
                 .padding(.horizontal, 10)
@@ -108,50 +108,65 @@ extension ClipsPlayer{
     private func reelInfoViewSection(_ clip: Clip) -> some View{
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 2) {
-                Text("@karennne")
-                    .fontWeight(.semibold)
+                Button {
+                    
+                } label: {
+                    Text(clip.athor?.userName ?? "noName")
+                        .font(.proximaSemibold(size: 16))
+                }
                 Text("· 1-28")
                     .foregroundColor(.white.opacity(0.5))
             }
-            Text(clip.description)
-                .font(.callout)
-                .fontWeight(.semibold)
-            Text("Roddy Roundicch - The Rou")
-                .font(.system(size: 15))
+            VStack(alignment: .leading, spacing: 6) {
+                Text(clip.description)
+                    .font(.proximaRegular(size: 16))
+                Text(clip.getHashtag())
+                    .font(.proximaSemibold(size: 16))
+            }
+            musicButton(clip.sound)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    private var reelActionButtons: some View{
+    private func clipPrimaryButtons(_ clip: Clip) -> some View{
         VStack(spacing: 25){
-            Image("plaseholdAvatar")
-                .resizable()
-                .frame(width: 47, height: 47)
-                .overlay(Circle().stroke(lineWidth: 1.3))
-                .clipShape(Circle())
-            actionButton(image: "heartFill", value: "3445")
-            actionButton(image: "messageIcon", value: "124")
-            actionButton(image: "shareIcon", value: "Share")
-            Image("audioPlacehold")
-                .resizable()
-                .frame(width: 47, height: 47)
-                .overlay(Circle().stroke(lineWidth: 20).fill(Color.black.opacity(0.8)))
-                .clipShape(Circle())
+            authorAvatarButton(clip.athor)
+            actionButtons(clip)
+            SoundtrackCircleButton(soundtrack: clip.sound)
         }
     }
     
-    private func actionButton(image: String, value: String) -> some View{
+    private func authorAvatarButton(_ author: Author?) -> some View{
         Button {
             
         } label: {
-            VStack(spacing: 10) {
-                Image(image)
-                Text(value)
-                    .font(.system(size: 13))
-            }
-            
+            UserAvatarViewComponent(pathImage: author?.avatarPath, size: CGSize.init(width: 47, height: 47))
+                .overlay(Circle().stroke(lineWidth: 1.5))
         }
     }
+    
+    private func actionButtons(_ clip: Clip) -> some View{
+        Group{
+            ClipActionButton(imageName: "heartFill", value: "\(clip.likeCount)", action: {})
+            ClipActionButton(imageName: "messageIcon", value: "\(clip.comments.count)", action: {})
+            ClipActionButton(imageName: "shareIcon", value: "Share", action: {})
+        }
+    }
+    private func musicButton(_ sound: Soundtrack?) -> some View{
+        Button {
+            
+        } label: {
+            Label {
+                Text(sound?.title ?? "Mo name")
+                    .font(.proximaRegular(size: 14))
+            } icon: {
+                Image("music")
+            }
+        }
+
+    }
+    
+    
     private func resetTimeVideo(){
         self.time = CMTimeMakeWithSeconds(0.0, preferredTimescale: self.time.timescale)
     }
@@ -161,5 +176,24 @@ struct ReelsPlayer2_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(LoginViewModel())
+    }
+}
+
+
+struct ClipActionButton:  View{
+    let imageName: String
+    let value: String
+    let action: () -> Void
+    var body: some View{
+        Button {
+            
+        } label: {
+            VStack(spacing: 10) {
+                Image(imageName)
+                Text(value)
+                    .font(.proximaSemibold(size: 16))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }

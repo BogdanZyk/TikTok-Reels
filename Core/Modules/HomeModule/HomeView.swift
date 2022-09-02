@@ -67,8 +67,9 @@ extension HomeView{
             Spacer()
             Text("Following")
                 .foregroundColor(.white.opacity(0.8))
+                .font(.proximaSemibold(size: 16))
             Text("For you")
-                .bold()
+                .font(.proximaBold(size: 18))
             Spacer()
             Button {
                 
