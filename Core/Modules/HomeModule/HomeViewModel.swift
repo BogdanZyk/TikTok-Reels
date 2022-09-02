@@ -1,5 +1,5 @@
 //
-//  ReelsViewModel.swift
+//  HomeViewModel.swift
 //  TikTok Reels (iOS)
 //
 //  Created by Bogdan Zykov on 02.09.2022.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class ReelsViewModel: ObservableObject{
+final class HomeViewModel: ObservableObject{
     
     @Published var videos: [Video] = []
     @Published var errorMessage: String = ""

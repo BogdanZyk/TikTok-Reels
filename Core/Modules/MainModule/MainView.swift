@@ -18,7 +18,7 @@ struct MainView: View {
         VStack(spacing: 0) {
             TabView(selection: $currentTab) {
               
-                ReelsView2()
+                HomeView()
                     .tag(Tab.home)
                 
                 Text("Discover")
@@ -54,8 +54,15 @@ extension MainView{
                 Button {
                     currentTab = tab
                 } label: {
-                    Image(tab.rawValue)
-                        .frame(maxWidth: .infinity)
+                    VStack(spacing: 5) {
+                        Image(tab.rawValue)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 30)
+                            Text(tab.title)
+                                .foregroundColor(.white)
+                                .font(.system(size: 12))
+                        
+                    }
                 }
             }
             .padding(.vertical, 10)
@@ -67,5 +74,20 @@ extension MainView{
 
 
 enum Tab: String, CaseIterable{
-    case home, account, addPrimary, message, search
+    case home, search, addPrimary, message, account
+    
+    var title: String{
+        switch self {
+        case .home:
+            return "Home"
+        case .search:
+            return "Discover"
+        case .addPrimary:
+            return ""
+        case .message:
+            return "Inbox"
+        case .account:
+            return "Me"
+        }
+    }
 }

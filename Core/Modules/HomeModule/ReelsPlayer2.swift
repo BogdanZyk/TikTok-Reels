@@ -1,57 +1,16 @@
 //
-//  ReelsView2.swift
+//  ReelsPlayer2.swift
 //  TikTok Reels (iOS)
 //
 //  Created by Bogdan Zykov on 02.09.2022.
 //
-
 import AVFoundation
-import SwiftUI
 import VideoPlayer
-
-struct ReelsView2: View {
-    @StateObject private var reelVM = ReelsViewModel()
-    @State private var currentVideoId = ""
-    
-    
-    
-    var body: some View {
-        
-        GeometryReader { proxy in
-            let size = proxy.size
-            TabView(selection: $currentVideoId) {
-                ForEach(reelVM.videos){video in
-                    ReelsPlayer2(size: size, currentVideoId: $currentVideoId, video: video)
-                    .frame(width: size.width)
-                    .rotationEffect(.degrees(-90))
-                    .ignoresSafeArea(.all, edges: .top)
-                    .tag(video.id)
-                }
-            }
-            .rotationEffect(.degrees(90))
-            .frame(width: size.height)
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(width: size.width)
-        }
-        .ignoresSafeArea(.all, edges: .top)
-        .background(Color.black.ignoresSafeArea())
-        .onAppear{
-            currentVideoId = reelVM.videos.first?.id ?? ""
-        }
-    }
-}
-
-struct ReelsView2_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(LoginViewModel())
-            
-    }
-}
-
+import SwiftUI
 
 struct ReelsPlayer2: View{
     var size: CGSize
+    var mainPlay: Bool
     @State private var autoReplay: Bool = true
     @State private var time: CMTime = .zero
     @Binding var currentVideoId: String
@@ -142,6 +101,9 @@ struct ReelsPlayer2: View{
                 }
             }
         }
+        .onChange(of: mainPlay) { isPlay in
+            play = isPlay
+        }
     }
 }
 
@@ -194,5 +156,9 @@ extension ReelsPlayer2{
     }
 }
 
-
-
+struct ReelsPlayer2_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(LoginViewModel())
+    }
+}
