@@ -1,5 +1,5 @@
 //
-//  ReelsPlayer2.swift
+//  ClipsPlayer.swift
 //  TikTok Reels (iOS)
 //
 //  Created by Bogdan Zykov on 02.09.2022.
@@ -8,24 +8,23 @@ import AVFoundation
 import VideoPlayer
 import SwiftUI
 
-struct ReelsPlayer2: View{
+struct ClipsPlayer: View{
+    var clip: Clip
     var size: CGSize
     var mainPlay: Bool
     @State private var autoReplay: Bool = true
     @State private var time: CMTime = .zero
-    @Binding var currentVideoId: String
+    @Binding var currentClipId: String
     @State private var play: Bool = true
     @State private var isStop: Bool = false
     @State private var showMore = false
     @State private var isOpacity = false
     @State private var totalDuration: Double = 0
     
-    var video: Video
     var body: some View{
         ZStack{
-            if let videoUrl = video.videoURL, let url = URL(string: videoUrl){
+            if let videoUrl = clip.videoUrl, let url = URL(string: videoUrl){
                 VideoPlayer(url: url, play: $play, time: $time)
-                   
                     .autoReplay(autoReplay)
                     .onStateChanged { state in
                         switch state {
@@ -82,7 +81,7 @@ struct ReelsPlayer2: View{
                 }
                 VStack{
                     HStack(alignment: .bottom) {
-                        reelInfoViewSection(video)
+                        reelInfoViewSection(clip)
                         reelActionButtons
                     }
                 }
@@ -105,8 +104,8 @@ struct ReelsPlayer2: View{
     }
 }
 
-extension ReelsPlayer2{
-    private func reelInfoViewSection(_ video: Video) -> some View{
+extension ClipsPlayer{
+    private func reelInfoViewSection(_ clip: Clip) -> some View{
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 2) {
                 Text("@karennne")
@@ -114,7 +113,7 @@ extension ReelsPlayer2{
                 Text("· 1-28")
                     .foregroundColor(.white.opacity(0.5))
             }
-            Text(video.title ?? "")
+            Text(clip.description)
                 .font(.callout)
                 .fontWeight(.semibold)
             Text("Roddy Roundicch - The Rou")

@@ -11,24 +11,22 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.safeAreaInsets) var safeAreaInsets
-    @StateObject private var reelVM = HomeViewModel()
-    @State private var currentVideoId = ""
-    
+    @StateObject private var homeVM = HomeViewModel()
+    @State private var currentClipId = ""
     @State private var mainPlay: Bool = true
-    
     var body: some View {
         ZStack(alignment: .top){
             GeometryReader { proxy in
                 let size = proxy.size
                 ZStack(alignment: .leading){
                     
-                    TabView(selection: $currentVideoId) {
-                        ForEach(reelVM.videos){video in
-                            ReelsPlayer2(size: size, mainPlay: mainPlay, currentVideoId: $currentVideoId, video: video)
+                    TabView(selection: $currentClipId) {
+                        ForEach(homeVM.allClips){clip in
+                            ClipsPlayer(clip: clip,  size: size, mainPlay: mainPlay, currentClipId: $currentClipId)
                                 .frame(width: size.width)
                                 .rotationEffect(.degrees(-90))
                                 .ignoresSafeArea(.all, edges: .top)
-                                .tag(video.id)
+                                .tag(clip.id)
                         }
                     }
                    
@@ -43,7 +41,7 @@ struct HomeView: View {
         .ignoresSafeArea(.all, edges: .top)
         .background(Color.black.ignoresSafeArea())
         .onAppear{
-            currentVideoId = reelVM.videos.first?.id ?? ""
+            currentClipId = homeVM.allClips.first?.id ?? ""
         }
     }
 }

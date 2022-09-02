@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A29085928C2AA640018516F /* ClipDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29085828C2AA640018516F /* ClipDataService.swift */; };
 		5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */; };
 		5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32E6EB28BEBD0100528140 /* ContentView.swift */; };
 		5A32E6FE28BEBD0300528140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A32E6EC28BEBD0300528140 /* Assets.xcassets */; };
@@ -33,13 +34,18 @@
 		5A60A6FE28C15FB300FE1803 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A6FD28C15FB300FE1803 /* MockData.swift */; };
 		5A60A70128C1631D00FE1803 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60A70028C1631D00FE1803 /* Helpers.swift */; };
 		5A60A70428C1642D00FE1803 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 5A60A70328C1642D00FE1803 /* VideoPlayer */; };
-		5AA80D7528C187B6001AA3D7 /* ReelsPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7128C187B6001AA3D7 /* ReelsPlayer2.swift */; };
+		5AA80D7528C187B6001AA3D7 /* ClipsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7128C187B6001AA3D7 /* ClipsPlayer.swift */; };
 		5AA80D7628C187B6001AA3D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7228C187B6001AA3D7 /* HomeView.swift */; };
 		5AA80D7728C187B6001AA3D7 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7328C187B6001AA3D7 /* ReelsView.swift */; };
 		5AA80D7828C187B6001AA3D7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7428C187B6001AA3D7 /* HomeViewModel.swift */; };
+		5AA80D7A28C2991D001AA3D7 /* FbConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA80D7928C2991D001AA3D7 /* FbConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A29085828C2AA640018516F /* ClipDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDataService.swift; sourceTree = "<group>"; };
+		5A29085B28C2AFA90018516F /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		5A29085C28C2AFA90018516F /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		5A29085D28C2AFA90018516F /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		5A32E6EA28BEBD0100528140 /* TikTok_ReelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTok_ReelsApp.swift; sourceTree = "<group>"; };
 		5A32E6EB28BEBD0100528140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A32E6EC28BEBD0300528140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,10 +68,11 @@
 		5A60A6F928C15D3C00FE1803 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A60A6FD28C15FB300FE1803 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		5A60A70028C1631D00FE1803 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		5AA80D7128C187B6001AA3D7 /* ReelsPlayer2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelsPlayer2.swift; sourceTree = "<group>"; };
+		5AA80D7128C187B6001AA3D7 /* ClipsPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipsPlayer.swift; sourceTree = "<group>"; };
 		5AA80D7228C187B6001AA3D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5AA80D7328C187B6001AA3D7 /* ReelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
 		5AA80D7428C187B6001AA3D7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5AA80D7928C2991D001AA3D7 /* FbConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A29085728C2AA4D0018516F /* ClipDataService */ = {
+			isa = PBXGroup;
+			children = (
+				5A29085828C2AA640018516F /* ClipDataService.swift */,
+			);
+			path = ClipDataService;
+			sourceTree = "<group>";
+		};
+		5A29085A28C2AF940018516F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5A29085B28C2AFA90018516F /* ProximaNova-Bold.ttf */,
+				5A29085D28C2AFA90018516F /* ProximaNova-Regular.ttf */,
+				5A29085C28C2AFA90018516F /* ProximaNova-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		5A32E6E428BEBD0100528140 = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +144,10 @@
 		5A32E70828BEBFFF00528140 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5A29085A28C2AF940018516F /* Fonts */,
 				5A60A6FF28C1631400FE1803 /* Helpers */,
 				5A32E70928BEC00500528140 /* Extensions */,
+				5AA80D7928C2991D001AA3D7 /* FbConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -161,6 +188,7 @@
 		5A60A6DA28C1530700FE1803 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5A29085728C2AA4D0018516F /* ClipDataService */,
 				5A60A6DB28C1531800FE1803 /* FirebaseManager.swift */,
 				5A60A6DD28C1534C00FE1803 /* UserDataService.swift */,
 			);
@@ -214,7 +242,7 @@
 			children = (
 				5AA80D7228C187B6001AA3D7 /* HomeView.swift */,
 				5AA80D7428C187B6001AA3D7 /* HomeViewModel.swift */,
-				5AA80D7128C187B6001AA3D7 /* ReelsPlayer2.swift */,
+				5AA80D7128C187B6001AA3D7 /* ClipsPlayer.swift */,
 				5AA80D7328C187B6001AA3D7 /* ReelsView.swift */,
 			);
 			path = HomeModule;
@@ -306,7 +334,7 @@
 				5A60A6F828C159C500FE1803 /* UIApplication.swift in Sources */,
 				5AA80D7828C187B6001AA3D7 /* HomeViewModel.swift in Sources */,
 				5A32E6FC28BEBD0300528140 /* ContentView.swift in Sources */,
-				5AA80D7528C187B6001AA3D7 /* ReelsPlayer2.swift in Sources */,
+				5AA80D7528C187B6001AA3D7 /* ClipsPlayer.swift in Sources */,
 				5A60A6E528C154C400FE1803 /* Video.swift in Sources */,
 				5A60A70128C1631D00FE1803 /* Helpers.swift in Sources */,
 				5A60A6F628C159A600FE1803 /* View.swift in Sources */,
@@ -317,10 +345,12 @@
 				5A32E70B28BEC00F00528140 /* Color.swift in Sources */,
 				5A60A6FE28C15FB300FE1803 /* MockData.swift in Sources */,
 				5A60A6FA28C15D3C00FE1803 /* CustomTextField.swift in Sources */,
+				5AA80D7A28C2991D001AA3D7 /* FbConstants.swift in Sources */,
 				5A60A6EC28C1574000FE1803 /* LoginViewModel.swift in Sources */,
 				5AA80D7628C187B6001AA3D7 /* HomeView.swift in Sources */,
 				5A32E71F28BEC42E00528140 /* MediaFile.swift in Sources */,
 				5A60A6DE28C1534C00FE1803 /* UserDataService.swift in Sources */,
+				5A29085928C2AA640018516F /* ClipDataService.swift in Sources */,
 				5A32E72128BEC5E100528140 /* MainView.swift in Sources */,
 				5A60A6E728C1568100FE1803 /* LoginView.swift in Sources */,
 				5A32E6FA28BEBD0300528140 /* TikTok_ReelsApp.swift in Sources */,

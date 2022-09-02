@@ -6,18 +6,20 @@
 //
 
 import Foundation
-
+import Combine
 
 final class HomeViewModel: ObservableObject{
     
-    @Published var videos: [Video] = []
+    let clipDataService: ClipDataService
+    
+    @Published var allClips: [Clip] = []
     @Published var errorMessage: String = ""
     @Published var showAlert: Bool = false
+    private var cancellable = Set<AnyCancellable>()
     
-    
-    init(){
-        //videos = MockData.videos
-        fetchVideos()
+    init(clipDataService: ClipDataService = ClipDataService()){
+        self.clipDataService = clipDataService
+        startClipSubscriptions()
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
 //            self.uploadData()
 //        }
@@ -26,18 +28,18 @@ final class HomeViewModel: ObservableObject{
     
 //        func uploadData(){
 //    //        addData(course: MockData.dailyCourse)
-//            MockData.videos.forEach { video in
-//                addData(video)
+//            MockData.clips.forEach { clip in
+//                addData(clip)
 //            }
 //        }
 //
 //
-//        func addData(_ video: Video){
+//        func addData(_ clip: Clip){
 //            do {
 //                try FirebaseManager.shared.firestore
-//                    .collection("videos")
+//                    .collection(FbConstants.All_CLIPS)
 //                    .document()
-//                    .setData(from: video, completion: { error in
+//                    .setData(from: clip, completion: { error in
 //                        if let error = error{
 //                            print(error.localizedDescription)
 //                        }
@@ -51,23 +53,29 @@ final class HomeViewModel: ObservableObject{
 //
 //        }
     
-    func fetchVideos(){
-        FirebaseManager.shared.firestore
-            .collection("videos")
-            .getDocuments {[weak self] (documentSnapshot, error) in
-                guard let self = self else {return}
-                self.handleError(error, title: "Failed to fetch Recomended Course")
-                documentSnapshot?.documents.forEach({ snapshot in
-                    do{
-                        let returnedVideo = try snapshot.data(as: Video.self)
-                        self.videos.append(returnedVideo)
-                    }catch{
-                        self.handleError(error, title: "Failed to decode course data")
-                        
-                    }
-                })
-            }
+    func startClipSubscriptions(){
+        clipDataService.$allClips
+            .assign(to: \.allClips, on: self)
+            .store(in: &cancellable)
     }
+    
+//    func fetchVideos(){
+//        FirebaseManager.shared.firestore
+//            .collection("videos")
+//            .getDocuments {[weak self] (documentSnapshot, error) in
+//                guard let self = self else {return}
+//                self.handleError(error, title: "Failed to fetch Recomended Course")
+//                documentSnapshot?.documents.forEach({ snapshot in
+//                    do{
+//                        let returnedVideo = try snapshot.data(as: Video.self)
+//                        self.videos.append(returnedVideo)
+//                    }catch{
+//                        self.handleError(error, title: "Failed to decode course data")
+//
+//                    }
+//                })
+//            }
+//    }
     
     private func handleError(_ error: Error?, title: String){
         
