@@ -1,12 +1,10 @@
 # TikTok-Reels
 
-The home screen is like the ticktock app.
-MVVM Architecture, iOS 15+, device: iphone.
-
+The home screen is like the TikTok app.
 
 ## Video 📷
 
-
+[![Watch the video](https://img.youtube.com/vi/XQpQ4kU0FOg/maxresdefault.jpg)](https://youtu.be/XQpQ4kU0FOg)
 
 ## Includes ( ALL SWIFTUI )
 - Combine Framework
